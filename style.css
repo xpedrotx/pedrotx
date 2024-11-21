@@ -43,7 +43,7 @@ h2.titulo span{
 
 /* ESTILO DO CABEÇALHO */
 header .logo img {
-  max-width: 100px; /* Limita a largura da logo */
+  max-width: 200px; /* Limita a largura da logo */
   height: auto; /* Mantém a proporção */
 }
 
