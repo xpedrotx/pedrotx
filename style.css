@@ -41,6 +41,11 @@ h2.titulo span{
   color: red;
 }
 
+button:hover{
+  box-shadow: 0px 0px 8px red;
+  transform: scale(1.05);
+}
+
 /* ESTILO DO CABEÇALHO */
 header .logo img {
   max-width: 200px; /* Limita a largura da logo */
@@ -76,11 +81,6 @@ header nav ul{
 header nav ul li{
   display: inline-block;
   padding: 0 40px;
-}
-
-.btn-contato button:hover{
-  box-shadow: 0px 0px 8px red;
-  transform: scale(1.05);
 }
 
 /* ESTILO DO TOPO DO SITE */
@@ -219,4 +219,46 @@ section.especialidades .flex{
 .especialidades .especialidades-box h3{
   font-size: 28px;
   margin: 15px 0;
+}
+
+/* ESTILO DO SOBRE MIM */
+section.sobre{
+  padding: 80px 4%;
+}
+
+section.sobre .flex{
+  align-items: center;
+  gap: 40px;
+}
+
+.sobre .txt-sobre{
+  color: white;
+}
+
+.sobre .txt-sobre h2{
+  font-size: 40px;
+  line-height: 40px;
+  margin-bottom: 30px;
+}
+
+.sobre .txt-sobre h2 span{
+  color: red;
+  display: block;
+}
+
+.sobre .txt-sobre p{
+  margin: 20px 0;
+  text-align: justify;
+}
+
+.sobre .txt-sobre .btn-social button{
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  background-color: red;
+  font-size: 25px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: 0.2;
 }
