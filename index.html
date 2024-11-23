@@ -132,11 +132,17 @@
                 <h2 class="titulo">FALE <span>COMIGO</span>.</h2>
 
                 <form method="post" action="forms.php">
-                    <input type="text" name="" id="nome" name="nome" placeholder="Seu nome: " required>
-                    <input type="text" name="" id="e-mail" name="e-mail" placeholder="Seu e-mail: "required>
-                    <input type="text" name="" id="celular" name="celular" placeholder="Seu celular: ">
-                    <textarea name="" id="" placeholder="Sua mensagem: "required></textarea>
-                    <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
+                    <label for="nome">Seu nome:</label>
+                    <input type="text" name="nome" id="nome" placeholder="Seu nome" required>
+                    <label for="email">Seu e-mail:</label>
+                    <input type="email" name="email" id="email" placeholder="Seu e-mail" required>
+                    <label for="celular">Seu celular:</label>
+                    <input type="tel" name="celular" id="celular" placeholder="Seu celular">
+                    <label for="mensagem">Sua mensagem:</label>
+                    <textarea name="mensagem" id="mensagem" placeholder="Sua mensagem" required></textarea>
+                    <div class="btn-enviar">
+                        <input type="submit" value="ENVIAR">
+                    </div>
                 </form>
             </div><!--inteface-->
         </section><!--formulario-->

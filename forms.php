@@ -1,20 +1,37 @@
 <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Captura os dados do formulário
+    $nome = htmlspecialchars($_POST['nome']);
+    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+    $celular = htmlspecialchars($_POST['celular']);
+    $mensagem = htmlspecialchars($_POST['mensagem']);
 
-$nome = addcslashes($_POST['nome']);
-$email = addcslashes($_POST['e-mail']);
-$celular = addcslashes($_POST['celular'])
+    // Verifica se os campos obrigatórios estão preenchidos
+    if (!$email) {
+        echo "Por favor, insira um e-mail válido.";
+        exit;
+    }
 
-$para = "lisboapedro70@gmail.com";
-$assunto = "Contato - PEDROTXDEV";
+    // Configurações do e-mail
+    $to = "lisboapedro70@gmail.com"; // Substitua pelo seu endereço de e-mail
+    $assunto = "Nova mensagem do formulário";
+    $mensagemEmail = "Você recebeu uma nova mensagem do formulário:\n\n";
+    $mensagemEmail .= "Nome: $nome\n";
+    $mensagemEmail .= "E-mail: $email\n";
+    $mensagemEmail .= "Celular: $celular\n";
+    $mensagemEmail .= "Mensagem: $mensagem\n";
 
-$corpo = "Nome: ".$nome."\n"."E-mail: ".$email."\n"."Telefone: ".$celular;
+    $headers = "From: $email\r\n";
+    $headers .= "Reply-To: $email\r\n";
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
-$cabeca = "From: canalstockplayer@gmail.com"."\n"."Reply-to: ".$email."\n"."X=Mailer:PHP/".phpversion();
-
-if(mail($para,$assunto,$corpo,$cabeca)){
-    echo("E-mail enviado com sucesso!");
-}else{
-    echo("Houve um erro ao enviar o e-mail!");
+    // Envia o e-mail
+    if (mail($to, $assunto, $mensagemEmail, $headers)) {
+        echo "E-mail enviado com sucesso!";
+    } else {
+        echo "Falha ao enviar o e-mail. Tente novamente mais tarde.";
+    }
+} else {
+    echo "Método de requisição inválido.";
 }
-
 ?>
