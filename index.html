@@ -130,22 +130,35 @@
         <section class="formulario">
             <div class="inteface">
                 <h2 class="titulo">FALE <span>COMIGO</span>.</h2>
-
-                <form method="post" action="forms.php">
+        
+                <form method="post" action="https://formsubmit.co/lisboapedro70@gmail.com" id="contactForm" onsubmit="sendEmail(event)">
+                    <!-- Campo oculto para o FormSubmit -->
+                    <input type="hidden" name="_next" value="javascript:void(0);" /> <!-- Impede o redirecionamento -->
+                    
                     <label for="nome">Seu nome:</label>
                     <input type="text" name="nome" id="nome" placeholder="Seu nome" required>
+                    
                     <label for="email">Seu e-mail:</label>
                     <input type="email" name="email" id="email" placeholder="Seu e-mail" required>
+                    
                     <label for="celular">Seu celular:</label>
                     <input type="tel" name="celular" id="celular" placeholder="Seu celular">
+                    
                     <label for="mensagem">Sua mensagem:</label>
                     <textarea name="mensagem" id="mensagem" placeholder="Sua mensagem" required></textarea>
+                    
                     <div class="btn-enviar">
                         <input type="submit" value="ENVIAR">
                     </div>
                 </form>
+                
+                <!-- Notificação de envio -->
+                <div id="notification" style="display:none; color: green; font-size: 16px; margin-top: 20px;">
+                    Email enviado com sucesso!
+                </div>
             </div><!--inteface-->
         </section><!--formulario-->
+        <script src="script.js"></script>
     </main>
     
     <footer>
