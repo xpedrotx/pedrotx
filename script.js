@@ -1,3 +1,10 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(event) {
+        sendEmail(event);
+    });
+});
+
 function sendEmail(event) {
     event.preventDefault();  // Impede o envio do formulário diretamente
 
@@ -11,8 +18,8 @@ function sendEmail(event) {
     })
     .then(response => {
         if (response.ok) {
-            // Exibe a notificação de sucesso
-            document.getElementById('notification').style.display = 'block';
+            // Exibe uma caixa de diálogo no navegador
+            alert("Email enviado com sucesso!");
             // Limpa o formulário
             form.reset();
         } else {
